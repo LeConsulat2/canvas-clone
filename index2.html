@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Te Kete Aronui</title>
+    <style>
+      /* Basic reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header */
+      .header {
+        background-color: #004d40;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Main content layout */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Interactive button area */
+      .translate-button {
+        background-color: #ff9800;
+        color: #fff;
+        padding: 15px 25px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 20px auto;
+        display: block;
+        transition: background-color 0.3s ease;
+      }
+
+      .translate-button:hover {
+        background-color: #e68900;
+      }
+
+      /* Main sections styling */
+      .section {
+        padding: 40px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .section h2 {
+        color: #004d40;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Scenario cards */
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .card {
+        background-color: #fff;
+        width: 250px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      /* Timeline section */
+      .timeline {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px 0;
+      }
+
+      .timeline div {
+        background-color: #e0f7fa;
+        padding: 10px;
+        width: 150px;
+        text-align: center;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .timeline div:hover {
+        background-color: #b2ebf2;
+      }
+
+      /* Quiz and badges section */
+      .quiz-section {
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+        background-color: #ffe0b2;
+        border-radius: 10px;
+      }
+
+      .badge {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 15px;
+        background-color: #ffd740;
+        border-radius: 50%;
+        color: #004d40;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <h1>Te Kete Aronui: Māori Values and Te Tiriti o Waitangi</h1>
+      <p>Interactive Learning Platform for AUT Staff</p>
+    </div>
+
+    <div class="container">
+      <!-- Translate Button -->
+      <button class="translate-button">
+        Click to Translate Key Terms to Te Reo Māori
+      </button>
+
+      <!-- Section: Māori Values in Action Scenarios -->
+      <div class="section">
+        <h2>Māori Values in Action</h2>
+        <div class="cards-container">
+          <div class="card">
+            <h3>Scenario 1</h3>
+            <p>Respecting Manaakitanga in the Workplace</p>
+          </div>
+          <div class="card">
+            <h3>Scenario 2</h3>
+            <p>Supporting a Māori Student's Learning Journey</p>
+          </div>
+          <div class="card">
+            <h3>Scenario 3</h3>
+            <p>Applying Tikanga in Meetings</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Timeline of Te Tiriti o Waitangi -->
+      <div class="section timeline">
+        <h2>Te Tiriti o Waitangi Timeline</h2>
+        <div>1840: Te Tiriti Signed</div>
+        <div>1975: Waitangi Tribunal Established</div>
+        <div>2004: Māori Language Act</div>
+        <div>2024: AUT’s Aronui Ora Programme</div>
+      </div>
+
+      <!-- Section: Pronunciation Practice -->
+      <div class="section">
+        <h2>Te Reo Māori Pronunciation Practice</h2>
+        <p>Hover over each word to hear its pronunciation.</p>
+        <!-- Pronunciation examples can be added here as interactive buttons with audio elements -->
+      </div>
+
+      <!-- Section: Quiz and Badges -->
+      <div class="section quiz-section">
+        <h2>Knowledge Quiz</h2>
+        <p>Test your knowledge and earn achievement badges!</p>
+        <div class="badge">Kaitiakitanga</div>
+        <div class="badge">Manaakitanga</div>
+        <div class="badge">Whanaungatanga</div>
+      </div>
+    </div>
+  </body>
+</html>
