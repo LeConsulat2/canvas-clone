@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+  color: #34495e;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-header {
+  text-align: center;
+  background: linear-gradient(135deg, #42a5f5 0%, #1e88e5 100%);
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  color: #1e6091;
+  margin-bottom: 10px;
+}
+
+.content {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+section {
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.language-section h3 {
+  font-size: 1.2em;
+  color: #00796b;
+  margin-top: 5px;
+}
+
+.wellbeing-section ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.8;
+}
+
+.wellbeing-section ul li {
+  background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+  padding: 8px;
+  border-radius: 8px;
+  margin: 5px 0;
+  color: #2e7d32;
+}
+
+.wellbeing-section img {
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 10px auto;
+}
+
+.accessibility-section p {
+  font-size: 1.1em;
+  color: #5c6bc0;
+}
+
+button {
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+
+.quiz-section label {
+  display: block;
+  margin: 5px 0;
+  color: #37474f;
+}
+
+footer {
+  background: linear-gradient(135deg, #b0bec5 0%, #78909c 100%);
+  color: #eceff1;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-section .quiz {
+  margin-top: 10px;
+  padding: 10px;
+  background: #eceff1;
+  border-radius: 10px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cultural Engagement</title>
+    <link rel="stylesheet" href="culture.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Cultural Engagement & Well-being</h1>
+    </header>
+
+    <main class="content">
+      <!-- Māori Language of the Week Section -->
+      <section class="language-section">
+        <h2>Māori Language of the Week</h2>
+        <p>Learn a new Māori word each week! This week's word is:</p>
+        <h3>Kia ora (Hello)</h3>
+        <audio controls>
+          <source src="audio/kia_ora.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <p>Meaning: Hello, or be well.</p>
+      </section>
+
+      <!-- Mental Health and Well-being Toolkit Section -->
+      <section class="wellbeing-section">
+        <h2>Mental Health and Well-being Toolkit</h2>
+        <p>
+          Explore resources focused on hauora (holistic health) through the lens
+          of Māori values.
+        </p>
+        <ul>
+          <li>
+            <strong>Tinana</strong> - Physical health resources and exercises
+          </li>
+          <li>
+            <strong>Hinengaro</strong> - Mental and emotional well-being tips
+          </li>
+          <li>
+            <strong>Whānau</strong> - Social connection and community resources
+          </li>
+          <li>
+            <strong>Wairua</strong> - Spiritual well-being and mindfulness
+            practices
+          </li>
+        </ul>
+        <div class="wellbeing-section__title">
+          <img src="images/maori.webp" />
+        </div>
+      </section>
+
+      <!-- Accessibility and Inclusivity Section -->
+      <section class="accessibility-section">
+        <h2>Accessibility Features</h2>
+        <p>
+          This page includes accessibility features to enhance user experience
+          for everyone.
+        </p>
+        <button onclick="toggleContrast()">Toggle High Contrast</button>
+      </section>
+
+      <!-- Interactive Quiz Section -->
+      <section class="quiz-section">
+        <h2>Interactive Quiz: Te Tiriti o Waitangi</h2>
+        <img />
+        <p>Test your knowledge about Te Tiriti o Waitangi:</p>
+        <div class="quiz">
+          <p>
+            <strong>Question:</strong> What year was Te Tiriti o Waitangi
+            signed?
+          </p>
+          <label
+            ><input type="radio" name="question1" value="1840" /> 1840</label
+          ><br />
+          <label
+            ><input type="radio" name="question1" value="1865" /> 1865</label
+          ><br />
+          <label
+            ><input type="radio" name="question1" value="1890" /> 1890</label
+          ><br />
+          <button onclick="checkAnswer()">Submit Answer</button>
+          <p id="quiz-result"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <p>&copy; 2024 University of Technology. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

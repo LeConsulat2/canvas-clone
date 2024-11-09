@@ -1,6 +1,6 @@
 /* styles.css */
-
-@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@600&display=swap');
 
 body {
   margin: 0;
@@ -81,6 +81,12 @@ body {
 .content {
   margin-left: 270px;
   padding: 2rem;
+}
+
+.button {
+  display: flex;
+  justify-content: end;
+  font-size: 25px;
 }
 
 .hero-section {

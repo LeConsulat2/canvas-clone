@@ -55,23 +55,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Interactive Search Functionality
-  const searchInput = document.createElement('input');
-  searchInput.type = 'text';
-  searchInput.placeholder = 'Search...';
-  searchInput.classList.add('search-bar');
-  document.querySelector('.main-header').appendChild(searchInput);
+  // Check if the current page is index.html
+  if (window.location.pathname.endsWith('index.html')) {
+    // Interactive Search Functionality
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Search...';
+    searchInput.classList.add('search-bar');
+    document.querySelector('.main-header').appendChild(searchInput);
 
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase();
-    document
-      .querySelectorAll('.programme-card, .resource-card')
-      .forEach((card) => {
-        const text = card.innerText.toLowerCase();
-        if (text.includes(query)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-  });
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      document
+        .querySelectorAll('.programme-card, .resource-card')
+        .forEach((card) => {
+          const text = card.innerText.toLowerCase();
+          if (text.includes(query)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+    });
+  }
 });
