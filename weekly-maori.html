@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Te Kete Aronui</title>
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(180deg, #87cefa, #ffffff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* Te Reo of the Week Widget */
+      .te-reo-widget {
+        perspective: 1000px;
+        margin-top: 20px;
+      }
+
+      .card {
+        width: 300px;
+        height: 200px;
+        background: linear-gradient(135deg, #004d40, #00796b);
+        border-radius: 12px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.5em;
+        font-weight: bold;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+        opacity: 0;
+        animation: fadeIn 1.5s ease forwards 0.5s; /* Delayed fade-in animation */
+      }
+
+      .card.flip {
+        transform: rotateY(180deg);
+      }
+
+      .card.shake {
+        animation: shake 0.5s ease;
+      }
+
+      .card .front,
+      .card .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+      }
+
+      .card .front {
+        background: linear-gradient(135deg, #004d40, #00796b);
+      }
+
+      .card .back {
+        background: linear-gradient(135deg, #ff9800, #ffb74d);
+        transform: rotateY(180deg);
+        color: #333;
+        font-size: 1.2em;
+        text-align: center;
+      }
+
+      /* Countdown text */
+      .countdown {
+        font-size: 1.5em;
+        margin-top: 20px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes shake {
+        0% {
+          transform: rotateY(180deg) translateX(-5px);
+        }
+        25% {
+          transform: rotateY(180deg) translateX(5px);
+        }
+        50% {
+          transform: rotateY(180deg) translateX(-5px);
+        }
+        75% {
+          transform: rotateY(180deg) translateX(5px);
+        }
+        100% {
+          transform: rotateY(180deg) translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Te Reo of the Week Widget -->
+    <div class="te-reo-widget">
+      <div class="card" onclick="flipCard()">
+        <div class="front">Te Reo of the Week</div>
+        <div class="back">
+          Ni hil bo ne sine labore <br />
+          <span id="countdown-text" class="countdown"></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Delayed card appearance
+      window.onload = function () {
+        setTimeout(() => {
+          document.querySelector('.card').style.opacity = 1;
+        }, 500);
+      };
+
+      let flipped = false;
+      let countdown = 5;
+
+      function flipCard() {
+        const card = document.querySelector('.card');
+        const countdownText = document.getElementById('countdown-text');
+
+        // Flip and show countdown
+        if (!flipped) {
+          card.classList.toggle('flip');
+          countdownText.innerText = `Can you guess what this means? Starting in ${countdown}...`;
+          flipped = true;
+
+          // Start countdown
+          const countdownInterval = setInterval(() => {
+            countdown--;
+            countdownText.innerText = countdown > 0 ? `${countdown}...` : '';
+
+            // End countdown and reveal meaning
+            if (countdown <= 0) {
+              clearInterval(countdownInterval);
+              countdownText.innerText =
+                'Ni hil bo ne sine labore means... nothing achieved without hard work! Come back next week for more!';
+
+              // Shake effect
+              card.classList.add('shake');
+              setTimeout(() => {
+                card.classList.remove('shake');
+              }, 500);
+            }
+          }, 1000);
+        }
+      }
+    </script>
+  </body>
+</html>
