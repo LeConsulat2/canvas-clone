@@ -84,10 +84,10 @@ body {
 .look {
   font-size: 15px;
   color: black;
-  background-color: #ffeb3b;
+  background-color: #faf1a3;
   padding: 10px;
   border-radius: 5px;
-  animation: blink 1s ease-in-out 3 forwards;
+  animation: blink 1s ease-in-out 2;
   animation-delay: 0.5s;
 }
 
