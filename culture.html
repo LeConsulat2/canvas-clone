@@ -11,6 +11,23 @@
       <h1>Cultural Engagement & Well-being</h1>
     </header>
 
+    <!-- Accessibility Sidebar -->
+    <aside class="accessibility-sidebar" id="accessibility-sidebar">
+      <h2>Accessibility Settings</h2>
+      <p>Enhance your experience with accessibility options.</p>
+
+      <!-- Toggle High Contrast -->
+      <button onclick="toggleContrast()">Toggle High Contrast</button>
+
+      <!-- Text Size Adjustment -->
+      <div class="text-size-controls">
+        <p>Adjust Text Size:</p>
+        <button onclick="adjustFontSize(14)">Small</button>
+        <button onclick="adjustFontSize(18)">Normal</button>
+        <button onclick="adjustFontSize(22)">Large</button>
+      </div>
+    </aside>
+
     <main class="content">
       <!-- Māori Language of the Week Section -->
       <section class="language-section">
@@ -47,26 +64,14 @@
           </li>
         </ul>
         <div class="wellbeing-section__title">
-          <img src="images/maori.webp" />
+          <img class="maorii" src="images/maori.webp" />
         </div>
-      </section>
-
-      <!-- Accessibility and Inclusivity Section -->
-      <section class="accessibility-section">
-        <h2>Accessibility Features</h2>
-        <p>
-          This page includes accessibility features to enhance user experience
-          for everyone.
-        </p>
-        <button onclick="toggleContrast()">Toggle High Contrast</button>
       </section>
 
       <!-- Interactive Quiz Section -->
       <section class="quiz-section">
         <h2>Interactive Quiz: Te Tiriti o Waitangi</h2>
-        <img />
-        <p>Test your knowledge about Te Tiriti o Waitangi:</p>
-        <div class="quiz">
+        <form class="quiz" onsubmit="checkAnswer(event)">
           <p>
             <strong>Question:</strong> What year was Te Tiriti o Waitangi
             signed?
@@ -80,9 +85,9 @@
           <label
             ><input type="radio" name="question1" value="1890" /> 1890</label
           ><br />
-          <button onclick="checkAnswer()">Submit Answer</button>
+          <button type="submit">Submit Answer</button>
           <p id="quiz-result"></p>
-        </div>
+        </form>
       </section>
     </main>
 
@@ -90,6 +95,41 @@
       <p>&copy; 2024 University of Technology. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      function toggleContrast() {
+        document.body.classList.toggle('dark-mode');
+      }
+
+      function adjustFontSize(size) {
+        document.documentElement.style.fontSize = size + 'px';
+      }
+
+      function checkAnswer(event) {
+        event.preventDefault();
+        const selectedAnswer = document.querySelector(
+          'input[name="question1"]:checked',
+        );
+        const result = document.getElementById('quiz-result');
+
+        if (!selectedAnswer) {
+          result.textContent = 'Please select an answer.';
+          return;
+        }
+
+        if (selectedAnswer.value === '1840') {
+          result.innerHTML = 'Correct! 🎈';
+          result.classList.add('correct-answer');
+          setTimeout(() => {
+            result.classList.remove('correct-answer');
+          }, 2000);
+        } else {
+          result.textContent = 'Not quite, try again! 😊';
+          result.classList.add('incorrect-answer');
+          setTimeout(() => {
+            result.classList.remove('incorrect-answer');
+          }, 2000);
+        }
+      }
+    </script>
   </body>
 </html>
