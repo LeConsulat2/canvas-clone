@@ -87,7 +87,7 @@ body {
   background-color: #ffeb3b;
   padding: 10px;
   border-radius: 5px;
-  animation: blink 1s ease-in-out 3;
+  animation: blink 1s ease-in-out 3 forwards;
   animation-delay: 0.5s;
 }
 
