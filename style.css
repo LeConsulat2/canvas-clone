@@ -12,10 +12,9 @@ body {
 
 .main-header {
   background: #2e363e;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 20px;
   margin-left: 50px;
 }
@@ -28,14 +27,14 @@ body {
   color: #fff;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+
   gap: 16px;
 }
 
 .main-nav a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 25px;
 }
 
