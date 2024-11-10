@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Ensure html and body cover the full viewport */
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+  color: #34495e;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dark Mode - Apply to both html and body */
+.dark-mode,
+.dark-mode body,
+.dark-mode html {
+  background-color: #121212; /* Dark background for the entire viewport */
+  color: #e0e0e0; /* Light text color for readability */
+}
+
+.main-header {
+  text-align: center;
+  background: linear-gradient(135deg, #42a5f5 0%, #1e88e5 100%);
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .main-header {
+  background: #1c1c1c;
+  color: #ffffff;
+}
+
+/* Sidebar */
+.accessibility-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #f5f5f5;
+  border-right: 2px solid #bbb;
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .accessibility-sidebar {
+  background: #333333;
+  color: #ffffff;
+}
+
+.accessibility-sidebar button {
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode button {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+/* Content */
+.content {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+/* Sections */
+section {
+  background: linear-gradient(135deg, #ffffff, #e0f7fa);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode section {
+  background: #1c1c1c;
+  color: #e0e0e0;
+}
+
+/* Quiz Section */
+.quiz-section .quiz {
+  padding: 10px;
+  background: #eceff1;
+  border-radius: 10px;
+}
+
+.dark-mode .quiz-section .quiz {
+  background: #333333;
+  color: #ffffff;
+}
+
+.correct-answer {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.incorrect-answer {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* maorii Class */
+.maorii {
+  width: 650px;
+  height: 200px;
+  border-radius: 30px;
+}
+
+/* Ensure Full Page Coverage */
+html,
+body {
+  height: 100%;
+}

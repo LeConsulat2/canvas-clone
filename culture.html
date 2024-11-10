@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cultural Engagement</title>
+    <link rel="stylesheet" href="culture.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>Cultural Engagement & Well-being</h1>
+    </header>
+
+    <!-- Accessibility Sidebar -->
+    <aside class="accessibility-sidebar" id="accessibility-sidebar">
+      <h2>Accessibility Settings</h2>
+      <p>Enhance your experience with accessibility options.</p>
+
+      <!-- Toggle High Contrast -->
+      <button onclick="toggleContrast()">Toggle High Contrast</button>
+
+      <!-- Text Size Adjustment -->
+      <div class="text-size-controls">
+        <p>Adjust Text Size:</p>
+        <button onclick="adjustFontSize(14)">Small</button>
+        <button onclick="adjustFontSize(18)">Normal</button>
+        <button onclick="adjustFontSize(22)">Large</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <!-- Māori Language of the Week Section -->
+      <section class="language-section">
+        <h2>Māori Language of the Week</h2>
+        <p>Learn a new Māori word each week! This week's word is:</p>
+        <h3>Kia ora (Hello)</h3>
+        <audio controls>
+          <source src="images/kiaora.mp3" />
+          Your browser does not support the audio element.
+        </audio>
+        <p>Meaning: Hello, or be well.</p>
+      </section>
+
+      <!-- Mental Health and Well-being Toolkit Section -->
+      <section class="wellbeing-section">
+        <h2>Mental Health and Well-being Toolkit</h2>
+        <p>
+          Explore resources focused on hauora (holistic health) through the lens
+          of Māori values.
+        </p>
+        <ul>
+          <li>
+            <strong>Tinana</strong> - Physical health resources and exercises
+          </li>
+          <li>
+            <strong>Hinengaro</strong> - Mental and emotional well-being tips
+          </li>
+          <li>
+            <strong>Whānau</strong> - Social connection and community resources
+          </li>
+          <li>
+            <strong>Wairua</strong> - Spiritual well-being and mindfulness
+            practices
+          </li>
+        </ul>
+        <div class="wellbeing-section__title">
+          <img class="maorii" src="images/maori.webp" />
+        </div>
+      </section>
+
+      <!-- Interactive Quiz Section -->
+      <section class="quiz-section">
+        <h2>Interactive Quiz: Te Tiriti o Waitangi</h2>
+        <form class="quiz" onsubmit="checkAnswer(event)">
+          <p>
+            <strong>Question:</strong> What year was Te Tiriti o Waitangi
+            signed?
+          </p>
+          <label
+            ><input type="radio" name="question1" value="1840" /> 1840</label
+          ><br />
+          <label
+            ><input type="radio" name="question1" value="1865" /> 1865</label
+          ><br />
+          <label
+            ><input type="radio" name="question1" value="1890" /> 1890</label
+          ><br />
+          <button type="submit">Submit Answer</button>
+          <p id="quiz-result"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <p>&copy; 2024 University of Technology. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function toggleContrast() {
+        document.documentElement.classList.toggle('dark-mode');
+      }
+
+      function adjustFontSize(size) {
+        document.documentElement.style.fontSize = size + 'px';
+      }
+
+      function checkAnswer(event) {
+        event.preventDefault();
+        const selectedAnswer = document.querySelector(
+          'input[name="question1"]:checked',
+        );
+        const result = document.getElementById('quiz-result');
+
+        if (!selectedAnswer) {
+          result.textContent = 'Please select an answer.';
+          return;
+        }
+
+        if (selectedAnswer.value === '1840') {
+          result.innerHTML = 'Correct! 🎈';
+          result.classList.add('correct-answer');
+          setTimeout(() => {
+            result.classList.remove('correct-answer');
+          }, 2000);
+        } else {
+          result.textContent = 'Not quite, try again! 😊';
+          result.classList.add('incorrect-answer');
+          setTimeout(() => {
+            result.classList.remove('incorrect-answer');
+          }, 2000);
+        }
+      }
+    </script>
+  </body>
+</html>
