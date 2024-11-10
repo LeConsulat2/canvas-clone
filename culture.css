@@ -1,14 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* Ensure html and body cover the full viewport */
+html,
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
   color: #34495e;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Dark Mode - Apply to both html and body */
+.dark-mode,
+.dark-mode body,
+.dark-mode html {
+  background-color: #121212; /* Dark background for the entire viewport */
+  color: #e0e0e0; /* Light text color for readability */
 }
 
 .main-header {
@@ -20,46 +32,12 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Hamburger Button */
-.sidebar-toggle {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  background: linear-gradient(135deg, #ffffff 0%, #e8f0ff 100%);
-  color: black;
-  border: none;
-  padding: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1000; /* Ensure it appears on top */
+.dark-mode .main-header {
+  background: #1c1c1c;
+  color: #ffffff;
 }
 
-h1,
-h2 {
-  margin: 0;
-}
-
-h1 {
-  font-size: 2.5em;
-}
-
-h2 {
-  color: #1e6091;
-  margin-bottom: 10px;
-}
-
-.content {
-  width: 90%;
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-.maorii {
-  width: 650px;
-  height: 200px;
-  border-radius: 30px;
-}
-
+/* Sidebar */
 .accessibility-sidebar {
   position: fixed;
   top: 0;
@@ -72,15 +50,9 @@ h2 {
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
 }
 
-.accessibility-sidebar h2 {
-  font-size: 1.5em;
-  color: #00796b;
-}
-
-.accessibility-sidebar p {
-  font-size: 1em;
-  color: #5c6bc0;
-  margin-bottom: 10px;
+.dark-mode .accessibility-sidebar {
+  background: #333333;
+  color: #ffffff;
 }
 
 .accessibility-sidebar button {
@@ -95,26 +67,19 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.accessibility-sidebar button:hover {
-  background-color: #004d40;
+.dark-mode button {
+  background-color: #444444;
+  color: #ffffff;
 }
 
-.text-size-controls button {
-  background-color: #00796b;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 5px;
-  width: 100%;
-  transition: background-color 0.3s ease;
+/* Content */
+.content {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
-.text-size-controls button:hover {
-  background-color: #004d40;
-}
-
+/* Sections */
 section {
   background: linear-gradient(135deg, #ffffff, #e0f7fa);
   padding: 15px;
@@ -125,78 +90,8 @@ section {
 }
 
 section:hover {
-  transform: translateY(-10px) scale(1.05); /* Adds the lift and slight zoom effect */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Deepens the shadow on hover */
-}
-.quiz-section .quiz {
-  padding: 10px;
-  background: #eceff1;
-  border-radius: 10px;
-}
-
-.correct-answer {
-  color: #2e7d32;
-  font-weight: bold;
-  animation: balloon 0.5s ease-out;
-}
-
-@keyframes balloon {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.incorrect-answer {
-  color: #d32f2f;
-  font-weight: bold;
-  animation: shake 0.5s ease-out;
-}
-
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25%,
-  75% {
-    transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-}
-
-/* High Contrast Mode */
-.high-contrast {
-  background-color: #000;
-  color: #fff;
-}
-
-.high-contrast section {
-  background-color: #222;
-  color: #fff;
-}
-
-.high-contrast button {
-  background-color: #fff;
-  color: #000;
-}
-
-/* Dark Mode */
-.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-.dark-mode .main-header {
-  background: #1c1c1c;
-  color: #ffffff;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .dark-mode section {
@@ -204,14 +99,11 @@ section:hover {
   color: #e0e0e0;
 }
 
-.dark-mode .accessibility-sidebar {
-  background: #333333;
-  color: #ffffff;
-}
-
-.dark-mode button {
-  background-color: #444444;
-  color: #ffffff;
+/* Quiz Section */
+.quiz-section .quiz {
+  padding: 10px;
+  background: #eceff1;
+  border-radius: 10px;
 }
 
 .dark-mode .quiz-section .quiz {
@@ -219,10 +111,25 @@ section:hover {
   color: #ffffff;
 }
 
-.dark-mode .correct-answer {
-  color: #81c784;
+.correct-answer {
+  color: #2e7d32;
+  font-weight: bold;
 }
 
-.dark-mode .incorrect-answer {
-  color: #e57373;
+.incorrect-answer {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* maorii Class */
+.maorii {
+  width: 650px;
+  height: 200px;
+  border-radius: 30px;
+}
+
+/* Ensure Full Page Coverage */
+html,
+body {
+  height: 100%;
 }
